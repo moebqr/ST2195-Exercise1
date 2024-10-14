@@ -1,13 +1,13 @@
 ---
-title: 'Execise 1: R Data Types Notebook'
+title: 'Exercise 1: R Data Types Notebook'
 output:
   html_document:
     df_print: paged
 ---
 
-### Student Name:
+### Student Name: Mohamed Alderazi
 
-### Student ID:
+### Student ID: STU-00106541
 
 This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook for practicing basic R data types, which is part of the ST2195 course at UOL and BIBF.
 Please answer the following questions by writing proper R code, and upload the completed file to a GitHub repository shared with your teacher (Github id heshaaam\@gmail.com).
@@ -38,31 +38,58 @@ rm(list = ls())
 Please place your answer in the available code chunks below the question.
 
 ```{r}
-
+var1 <- as.integer(5)
+var2 <- as.integer(8)
 ```
 
 2. Add the two variables and save them as a new variable named var3 and print the result.
 
 ```{r}
-
+var3 <- var1 + var2
+print(var3)
 ```
 
 3. Check the class, mode, and type for var1, var2, var3 and $\pi$ (is found under the variable name pi in R)
 
 ```{r}
+# Alternatively:
+# classVar1 <- class(var1)
+# classVar2 <- class(var2)
+# classVar3 <- class(var3)
+# print(classVar1)
+# print(classVar2)
+# print(classVar3)
 
+class(var1)
+class(var2)
+class(var3)
+
+mode(var1)
+mode(var2)
+mode(var3)
+
+typeof(var1)
+typeof(var2)
+typeof(var3)
 ```
 
 4. Create two character variables text1 and text2 containing any text of choice. Check mode, class, and type of the first one.
 
 ```{r}
+text1 = "Hello Bahrain!"
+text2 = "Bonjour Manama!"
 
+mode(text1)
+class(text1)
+typeof(text1)
 ```
 
 Add var1 from above to text1 and report the result.
 
 ```{r}
+varAndText = as.character(var1) + text1
 
+print(varAndText)
 ```
 
 5. Coerce or cast (force data type) var3 to integer, cast an integer variable to double, cast a string to a double.
