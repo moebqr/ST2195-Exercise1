@@ -87,7 +87,7 @@ typeof(text1)
 Add var1 from above to text1 and report the result.
 
 ```{r}
-varAndText = as.character(var1) + text1
+varAndText <- paste(text1, as.character(var1))
 
 print(varAndText)
 ```
@@ -95,49 +95,105 @@ print(varAndText)
 5. Coerce or cast (force data type) var3 to integer, cast an integer variable to double, cast a string to a double.
 
 ```{r}
+# Coerce var3 to an integer
+var3_int <- as.integer(var3)
+print(var3_int)
 
+# Cast an integer variable to double
+var1_double <- as.double(var1)
+print(var1_double)
+
+# Cast a string to a double
+str_to_double <- as.double("42.58")
+print(str_to_double)
 ```
 
 6. Use the floor and ceiling functions to caclulate the floor and ceiling of $\pi$.
 Check whether the floor of $\pi$ is an integer?
 
 ```{r}
+# Calculate the floor and ceiling of pi
+floor_pi <- floor(pi)
+ceiling_pi <- ceiling(pi)
+
+# Print the results
+print(floor_pi)
+print(ceiling_pi)
+
+# Check if the floor of pi is an integer
+is_integer_floor <- is.integer(floor_pi)
+print(is_integer_floor)  # Should return FALSE
 
 ```
 
 7. Convert the ‘3.56437’ string as number.
 
 ```{r}
+# Convert the string to a numeric value
+num_value <- as.numeric("3.56437")
 
+# Print the result
+print(num_value)
 ```
 
 8. Infinity (i.e. $\infty$) is written in R as \\inf . Calculate $\infty$ divided by $-\infty$.
 
 ```{r}
+# Calculate infinity divided by negative infinity
+result <- Inf / -Inf
 
+# Print the result
+print(result)
 ```
 
 9. Create two freely chosen complex numbers.
 ```{r}
+# Create two complex numbers
+complexNum1 <- 3 + 2i
+complexNum2 <- 5 - 4i
 
+# Print the complex numbers
+print(complexNum1)
+print(complexNum2)
 ```
 
 
 * Check that they are complex indeed.
 ```{r}
+# Check if the numbers are complex
+is_complex1 <- is.complex(complexNum1)
+is_complex2 <- is.complex(complexNum2)
 
+# Print the results
+print(is_complex1)  # Should return TRUE
+print(is_complex2)  # Should return TRUE
 ```
 
 
 * Add, multiply and divide one by another.
 ```{r}
+# Addition of two complex numbers
+add_result <- complexNum1 + complexNum2
+print(add_result)
 
+# Multiplication of two complex numbers
+multiply_result <- complexNum1 * complexNum2
+print(multiply_result)
+
+# Division of one complex number by another
+divide_result <- complexNum1 / complexNum2
+print(divide_result)
 ```
 
 
 * Add an integer to their sum.
 ```{r}
+# Sum of the two complex numbers
+sum_complex <- complexNum1 + complexNum2
 
+# Add an integer to the sum
+result <- sum_complex + 10
+print(result)
 ```
 
 10. Multiply a logical TRUE by a logical FALSE. 
@@ -145,7 +201,13 @@ Check whether the floor of $\pi$ is an integer?
 Raise the logical TRUE to the 7-th power.
 
 ```{r}
+# Multiply logical TRUE by logical FALSE
+multiplication_result <- TRUE * FALSE
+print(multiplication_result)
 
+# Raise logical TRUE to the 7th power
+exponentiation_result <- TRUE ^ 7
+print(exponentiation_result)
 ```
 
 11. Create two character variables containing two verses of your favorite song.
@@ -161,7 +223,29 @@ Raise the logical TRUE to the 7-th power.
 * extract substring starting at the 5th character and 5 characters long.
 
 ```{r}
+# Create two character variables with two verses
+verse1 <- "Porsche 911, fast and sleek."
+verse2 <- "Camry, reliable every week."
 
+# 1. Concatenate the two variables
+concatenated <- paste0(verse1, verse2)  # No separator
+print(concatenated)
+
+# 2. Paste the variables with '*' as a separator
+pasted_with_star <- paste(verse1, verse2, sep = "*")
+print(pasted_with_star)
+
+# 3. Find if 'and' occurs in the second line
+contains_and <- grepl("and", verse2)
+print(contains_and)
+
+# 4. Substitute a word for another
+substituted <- sub("Porsche 911", "Honda Pilot", verse1)
+print(substituted)
+
+# 5. Extract substring starting at the 5th character, 5 characters long
+substring_extracted <- substr(verse1, 5, 9)
+print(substring_extracted)
 ```
 
 Thank you. Please submit the finished notebook to Hesham through GitHub.
